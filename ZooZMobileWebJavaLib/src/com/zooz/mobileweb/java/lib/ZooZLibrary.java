@@ -215,4 +215,25 @@ public class ZooZLibrary {
 		return resultSB.toString();
 	}
 
+
+	public void setUserDetails(UserDetails userDetails) {
+		this.userDetails = userDetails;
+	}
+
+
+	public void setBillingAddress(Address billingAddress) {
+		this.billingAddress = billingAddress;
+	}
+
+
+	public void setShippingAddress(Address shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
+
+
+	public void setInvoice(Invoice invoice) {
+		this.invoice = invoice;
+	}
+
+	
 }
