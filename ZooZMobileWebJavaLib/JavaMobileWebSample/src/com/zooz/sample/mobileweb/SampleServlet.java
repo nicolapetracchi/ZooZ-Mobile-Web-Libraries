@@ -26,13 +26,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zooz.mobileweb.java.lib.ZooZLibrary;
-import com.zooz.mobileweb.java.lib.exceptions.ZooZException;
+import com.zooz.mobileweb.java.lib.exception.ZooZException;
 import com.zooz.mobileweb.java.lib.model.Address;
+import com.zooz.mobileweb.java.lib.model.Address.AddressType;
 import com.zooz.mobileweb.java.lib.model.Invoice;
 import com.zooz.mobileweb.java.lib.model.InvoiceItem;
 import com.zooz.mobileweb.java.lib.model.UserDetails;
-import com.zooz.mobileweb.java.lib.model.Address.AddressType;
-import com.zooz.mobileweb.java.lib.utils.StringUtils;
+import com.zooz.mobileweb.java.lib.utils.ZooZStringUtils;
 
 
 /**
@@ -116,14 +116,14 @@ public class SampleServlet extends HttpServlet {
 				zoozLibrary.setUserDetails(userDetails);
 				
 				Invoice invoice = new Invoice();
-				if (!StringUtils.isEmpty(request.getParameter("invoice.items(0).name"))) {
-					invoice.addInvoiceItem(new InvoiceItem(request.getParameter("invoice.items(0).name"), request.getParameter("invoice.items(0).id"), !StringUtils.isEmpty(request.getParameter("invoice.items(0).quantity")) ? Double.parseDouble(request.getParameter("invoice.items(0).quantity")) : 0, !StringUtils.isEmpty(request.getParameter("invoice.items(0).price")) ? Double.parseDouble(request.getParameter("invoice.items(0).price")) : 0, !StringUtils.isEmpty(request.getParameter("invoice.items(0).taxAmount")) ? Double.parseDouble(request.getParameter("invoice.items(0).taxAmount")) : 0, request.getParameter("invoice.items(0).additionalDetails")));
+				if (!ZooZStringUtils.isEmpty(request.getParameter("invoice.items(0).name"))) {
+					invoice.addInvoiceItem(new InvoiceItem(request.getParameter("invoice.items(0).name"), request.getParameter("invoice.items(0).id"), !ZooZStringUtils.isEmpty(request.getParameter("invoice.items(0).quantity")) ? Double.parseDouble(request.getParameter("invoice.items(0).quantity")) : 0, !ZooZStringUtils.isEmpty(request.getParameter("invoice.items(0).price")) ? Double.parseDouble(request.getParameter("invoice.items(0).price")) : 0, !ZooZStringUtils.isEmpty(request.getParameter("invoice.items(0).taxAmount")) ? Double.parseDouble(request.getParameter("invoice.items(0).taxAmount")) : 0, request.getParameter("invoice.items(0).additionalDetails")));
 				}
-				if (!StringUtils.isEmpty(request.getParameter("invoice.items(1).name"))) {
-					invoice.addInvoiceItem(new InvoiceItem(request.getParameter("invoice.items(1).name"), request.getParameter("invoice.items(1).id"), !StringUtils.isEmpty(request.getParameter("invoice.items(1).quantity")) ? Double.parseDouble(request.getParameter("invoice.items(1).quantity")) : 0, !StringUtils.isEmpty(request.getParameter("invoice.items(1).price")) ? Double.parseDouble(request.getParameter("invoice.items(1).price")) : 0, !StringUtils.isEmpty(request.getParameter("invoice.items(1).taxAmount")) ? Double.parseDouble(request.getParameter("invoice.items(1).taxAmount")) : 0, request.getParameter("invoice.items(1).additionalDetails")));
+				if (!ZooZStringUtils.isEmpty(request.getParameter("invoice.items(1).name"))) {
+					invoice.addInvoiceItem(new InvoiceItem(request.getParameter("invoice.items(1).name"), request.getParameter("invoice.items(1).id"), !ZooZStringUtils.isEmpty(request.getParameter("invoice.items(1).quantity")) ? Double.parseDouble(request.getParameter("invoice.items(1).quantity")) : 0, !ZooZStringUtils.isEmpty(request.getParameter("invoice.items(1).price")) ? Double.parseDouble(request.getParameter("invoice.items(1).price")) : 0, !ZooZStringUtils.isEmpty(request.getParameter("invoice.items(1).taxAmount")) ? Double.parseDouble(request.getParameter("invoice.items(1).taxAmount")) : 0, request.getParameter("invoice.items(1).additionalDetails")));
 				}
-				if (!StringUtils.isEmpty(request.getParameter("invoice.items(2).name"))) {
-					invoice.addInvoiceItem(new InvoiceItem(request.getParameter("invoice.items(2).name"), request.getParameter("invoice.items(2).id"), !StringUtils.isEmpty(request.getParameter("invoice.items(2).quantity")) ? Double.parseDouble(request.getParameter("invoice.items(2).quantity")) : 0, !StringUtils.isEmpty(request.getParameter("invoice.items(2).price")) ? Double.parseDouble(request.getParameter("invoice.items(2).price")) : 0, !StringUtils.isEmpty(request.getParameter("invoice.items(2).taxAmount")) ? Double.parseDouble(request.getParameter("invoice.items(2).taxAmount")) : 0, request.getParameter("invoice.items(2).additionalDetails")));
+				if (!ZooZStringUtils.isEmpty(request.getParameter("invoice.items(2).name"))) {
+					invoice.addInvoiceItem(new InvoiceItem(request.getParameter("invoice.items(2).name"), request.getParameter("invoice.items(2).id"), !ZooZStringUtils.isEmpty(request.getParameter("invoice.items(2).quantity")) ? Double.parseDouble(request.getParameter("invoice.items(2).quantity")) : 0, !ZooZStringUtils.isEmpty(request.getParameter("invoice.items(2).price")) ? Double.parseDouble(request.getParameter("invoice.items(2).price")) : 0, !ZooZStringUtils.isEmpty(request.getParameter("invoice.items(2).taxAmount")) ? Double.parseDouble(request.getParameter("invoice.items(2).taxAmount")) : 0, request.getParameter("invoice.items(2).additionalDetails")));
 				}
 				
 				invoice.setAdditionalDetails(request.getParameter("invoice.additionalDetails"));
