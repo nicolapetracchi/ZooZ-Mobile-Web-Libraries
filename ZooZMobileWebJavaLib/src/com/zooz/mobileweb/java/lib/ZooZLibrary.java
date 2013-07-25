@@ -51,6 +51,7 @@ public class ZooZLibrary {
 		
 		if (ZooZStringUtils.isEmpty(zoozAppKey)) {
 			throw new ZooZException("Please enter ZooZ App Key as diaplayed in ZooZ's developer portal under app details");
+			throw new ZooZException("Please enter ZooZ App Key as diaplayed in ZooZ's developer portal under App details");
 		}
 		
 		this.zoozUniqueId = zoozUniqueId;

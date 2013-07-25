@@ -42,6 +42,8 @@
 			
 			$zoozServer;
 			
+			$this->ch = curl_init();
+			
 			if ($isSandbox) {
 				$zoozServer = self::SANDBOX_URL;
 				curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, 0);
@@ -50,8 +52,6 @@
 			}
 			
 			$zoozServer .= "/mobile/SecuredWebServlet";
-			
-			$this->ch = curl_init();
 			
 			curl_setopt($this->ch, CURLOPT_HTTPHEADER, array(
 					'ZooZUniqueID: ' . $zoozUniqueId,
