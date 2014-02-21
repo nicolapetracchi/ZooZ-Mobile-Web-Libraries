@@ -23,7 +23,7 @@
 			$INVOICE = "invoice"; 
 			
 			$nvps->add($INVOICE . ".number" , $this->number);
-			$nvps->add($INVOICE . ".additionalDetails" , $this->number);
+			$nvps->add($INVOICE . ".additionalDetails" , $this->additionalDetails);
 			
 			foreach ($this->invoiceItems as $i => $invoiceItem) {
 				$ITEMS = ".items(" . $i . ")";
